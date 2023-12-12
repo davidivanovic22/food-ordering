@@ -16,7 +16,6 @@ const MenuItem: FC<any>  = (menuItem) => {
   const { addToCart } = useContext(CartContext) as any;
 
   const handleAddToCartButtonClick = async () => {
-    console.log('add to cart');
     const hasOptions = sizes.length > 0 || extraIngredientPrices.length > 0;
     if (hasOptions && !showPopup) {
       setShowPopup(true);
@@ -24,7 +23,6 @@ const MenuItem: FC<any>  = (menuItem) => {
     }
     addToCart(menuItem, selectedSize, selectedExtras);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log('hiding popup');
     setShowPopup(false);
   }
   const handleExtraThingClick = (ev, extraThing) => {

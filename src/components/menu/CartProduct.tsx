@@ -5,10 +5,11 @@ import { FC } from "react";
 
 interface CartProductProps {
   product: any;
-  onRemove?: () => void;
+  index: number
+  onRemove?: (index?: number) => void;
 }
 
-const CartProduct: FC<CartProductProps> = ({ product, onRemove }) => {
+const CartProduct: FC<CartProductProps> = ({ product, index, onRemove }) => {
   return (
     <div className="flex items-center gap-4 border-b py-4">
       <div className="w-24">
@@ -34,7 +35,7 @@ const CartProduct: FC<CartProductProps> = ({ product, onRemove }) => {
       <div className="text-lg font-semibold">${cartProductPrice(product)}</div>
       {!!onRemove && (
         <div className="ml-2">
-          <button type="button" onClick={() => onRemove()} className="p-2">
+          <button type="button" onClick={() => onRemove(index)} className="p-2">
             <Trash />
           </button>
         </div>

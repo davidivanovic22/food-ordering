@@ -50,8 +50,8 @@ const OrderPage: FC = () => {
       {order && (
         <div className="grid md:grid-cols-2 md:gap-16">
           <div>
-            {order.cartProducts.map(product => (
-              <CartProduct key={product._id} product={product} />
+            {order.cartProducts.map((product, index) => (
+              <CartProduct key={product._id} index={index} product={product} />
             ))}
             <div className="text-right py-2 text-gray-500">
               Subtotal:

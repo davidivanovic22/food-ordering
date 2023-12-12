@@ -96,6 +96,7 @@ const CartPage: React.FC = () => {
               <CartProduct
                 key={index}
                 product={product}
+                index={index}
                 onRemove={removeCartProduct}
               />
             ))}

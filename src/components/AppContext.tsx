@@ -35,6 +35,7 @@ export const AppProvider = ({ children }) => {
   };
 
   const removeCartProduct = (indexToRemove) => {
+
     setCartProducts((prevCartProducts) => {
       const newCartProducts = prevCartProducts.filter(
         (v, index) => index !== indexToRemove
